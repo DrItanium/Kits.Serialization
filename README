@@ -1,0 +1,13 @@
+This kit is meant to extend the serialization functionality provided by the 
+.NET Framework. At first this library was meant to be a way to simplify the
+creation of serialization engines but I found that most of the functionality I
+was going to implement was already there but poorly documented.
+
+Currently this kit provides the following abilities:
+ - Instance specific serialization
+
+Eventually this kit will provide:
+ - A serialization formatter that converts an object into it's simplest
+ representation to send across the boundaries of an application domain.
+ The opcodes of this formatter are defined by the programmer to provide maximum
+ flexibility.
