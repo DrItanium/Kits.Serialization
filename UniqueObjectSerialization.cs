@@ -33,7 +33,7 @@ using System.IO;
 namespace Kits.Serialization
 {
 	public delegate void SerializationAction<T>(SerializationInfo info, 
-			StreamingContext context, T content)
+			StreamingContext context, T content);
 	public delegate T DeserializationAction<T>(SerializationInfo info,
 			StreamingContext context, Func<T> itemCreator);
 	[Serializable]
@@ -47,7 +47,7 @@ namespace Kits.Serialization
 		public UniqueObjectSerializer(SerializationAction<T> serializer, T value)
 		{
 			this.value = value;
-			serializer = action;
+			this.serializer = serializer;
 		}
 		protected UniqueObjectSerializer(SerializationInfo info, StreamingContext context) : this()
 		{
